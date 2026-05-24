@@ -1,0 +1,31 @@
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+    
+        longest = 0
+
+        nums_set = set(nums)
+        
+        for k in nums_set:
+            if(k-1 not in nums_set): 
+                #then it's a starting point
+                x = k
+                print(f"x: {x}")
+                #part of the sequence
+                temp = 0
+                while(x in nums_set):   
+                    temp += 1
+                    x += 1
+                    
+                if(temp > longest):
+                    longest = temp
+
+
+
+        
+        return longest
+
+
+
+
+
+ 
